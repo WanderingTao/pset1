@@ -1,0 +1,21 @@
+//Returning # water bottles equivalent to shower time but declaring a PrintResult function outside of main
+#include <stdio.h>
+#include <cs50.h>
+
+void PrintResult(int bottles);
+
+int main(void)
+{
+    //Get showering time from user
+    printf("How many minutes is your average shower?\n");
+    int n = GetInt();
+    
+    //# water bottles == (shower n minutes * flow (1.5 gal/min) * 128oz/gal) / 16oz/bottle
+    int bottles = (n*1.5*128)/16;
+    PrintResult(bottles);
+}
+
+void PrintResult(int bottles)
+{
+    printf("minutes: %d\n", bottles);
+}
